@@ -1,0 +1,14 @@
+<%= javascript_tag do %>
+
+$(document).ready(function() {
+  $("#all_attributes").dblclick(function() {
+    var issue_description_label = $("label[for='issue_description']");
+    var issue_description_edit = issue_description_label.next();
+    if (issue_description_edit && issue_description_edit.is(":visible")) {
+        issue_description_edit.click();
+        document.getSelection().removeAllRanges();
+    }
+  });
+});
+
+<% end %>
